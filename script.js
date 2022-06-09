@@ -37,7 +37,6 @@ function game() {
     
     for (let i = 0; i < 5; i++) {
         
-        
         const playerSelection = prompt();
         const computerSelection = computerPlay();
         const result = playRound(playerSelection, computerSelection);
