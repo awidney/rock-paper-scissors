@@ -36,6 +36,8 @@ function playRound (playerSelection, computerSelection) {
 function game() {
     
     for (let i = 0; i < 5; i++) {
+        
+        
         const playerSelection = prompt();
         const computerSelection = computerPlay();
         const result = playRound(playerSelection, computerSelection);
@@ -47,20 +49,21 @@ function game() {
         } else if (result.match(/You Win.*/)) {
             playerScore++;
         }
+        
+        // determines game result
+        if (i == 4) {
+            if (playerScore > computerScore) {
+                console.log('Match result: Player Wins!');
+            } else if (playerScore < computerScore) {
+                console.log('Match result: Computer Wins!');
+            } else {
+                console.log('Match result: Draw!');
+            }
+        }
     }
     
 }
 
 let computerScore = 0;
 let playerScore = 0;
-
 game();
-
-// determines game result
-if (playerScore > computerScore) {
-    console.log('Match result: Player Wins!');
-} else if (playerScore < computerScore) {
-    console.log('Match result: Computer Wins!');
-} else {
-    console.log('Match result: Draw!');
-}
